@@ -21,6 +21,6 @@ CryptoCalc is an online service that takes the guess work out of profiting from 
     ETH: 0x0E2fF206E8294C9f20F90e6a8C74432FEA713a58
 
 
-
+## Made with Love by the Youth
 
 
