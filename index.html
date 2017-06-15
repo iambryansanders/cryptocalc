@@ -1,0 +1,264 @@
+<!--
+
+  Cryptocurrency Profit Calculator
+  by Bryan Sanders at Prodigy Lab
+
+  Twitter: @iambryansanders
+  Web: prodigylab.com
+
+  Design and Theme by: BlackrockDigital and the whole Bootstrap team
+
+!-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CryptoCalc</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <img src="img/logo.png" height="175px"alt="">
+                        <!-- <h5 class="subheading">CryptoCalc</h2> --!>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Quick Flip</h2>
+                    <span class="caption text-muted">Find Profit Based on Buying & Selling</span>
+
+</br>
+                        <div class="stream"><span class="caption text-muted">Amount of Coin:</span></div>
+                        <input type="number" id="amountNumber" value="0" maxlength="4"></br>
+                        <div class="stream"><span class="caption text-muted">Price of the Coin at Time of Purchase:</span></div>
+                        <input type="number" id="bNumber" value="0"></br>
+                        <div class="stream"><span class="caption text-muted">Purchase Fee:</span></div>
+                        <input type="number" id="bfNumber" value="0"></br>
+                        <div class="stream"><span class="caption text-muted">Price of the Coin at Time of Sale:</span></div>
+                        <input type="number" id="sNumber" value="0"></br>
+                        <div class="stream"><span class="caption text-muted">Selling Fee:</span></div>
+                        <input type="number" id="sfNumber" value="0">
+
+                      </br></br>
+                       <!-- <button type="button" name="button" class="btn btn-default" onclick="myfunction();" >Find Profit</button> -->
+
+
+                       <button onclick="oneFunction()" class="btn btn-default">Find Profit</button>
+
+                      <blockquote> <h1 id="profitfinal"></h1></blockquote>
+
+ <!--
+
+                       x = amount of coin bought
+                         amountNumber
+                       b = price bought at
+                         bNumber
+                       s = price sold at
+                         sNumber
+
+                       bf = buying fee
+                         bfnumber
+                       sf = selling fee
+                         sfnumber
+
+-->
+ <script>
+ function oneFunction() {
+      var x = parseFloat(document.getElementById("amountNumber").value);
+
+      var a = parseFloat(document.getElementById("bNumber").value);
+      var b = parseFloat(document.getElementById("sNumber").value);
+      var c = parseFloat(document.getElementById("bfNumber").value);
+      var d = parseFloat(document.getElementById("sfNumber").value);
+
+      var f = c + d;
+
+      var z = ((b*x)-(a*x))-f
+
+
+     document.getElementById("profitfinal").innerHTML = "$ "+z;
+ }
+ </script>
+
+                    <h2 class="section-heading">Dream Big...</h2>
+                    <span class="caption text-muted">Calculate Desired Sale Price based on Profit Goal</span>
+</br>
+                    <div class="stream"><span class="caption text-muted">Amount of Coin:</span></div>
+                    <input type="number" id="amountumber" value="0" maxlength="4"></br>
+                    <div class="stream"><span class="caption text-muted">Price of the Coin at Time of Purchase:</span></div>
+                    <input type="number" id="bumber" value="0"></br>
+                    <div class="stream"><span class="caption text-muted">Purchase Fee:</span></div>
+                    <input type="number" id="pfumber" value="0"></br>
+                    <div class="stream"><span class="caption text-muted">Selling Fee:</span></div>
+                    <input type="number" id="sfumber" value="0"></br>
+                    <div class="stream"><span class="caption text-muted">Desired Profit:</span></div>
+                    <input type="number" id="pNumber" value="0"></br>
+
+                  </br></br>
+                  <button onclick="twoFunction()" class="btn btn-default">Find Selling Price</button>
+
+                 <blockquote> <h1 id="sellingfinal"></h1></blockquote>
+
+                 <!--
+
+                                       x = amount of coin bought
+                                         amountumber
+                                       b = price bought at
+                                         bumber
+                                       p = desired profit
+                                          pNumber
+
+                                       a = buying fee
+                                         pfumber
+                                       b = selling fee
+                                         sfumber
+
+                 -->
+                 <script>
+                 function twoFunction() {
+                      var x = parseFloat(document.getElementById("amountumber").value);
+
+                      var i = parseFloat(document.getElementById("bumber").value);
+                      var p = parseFloat(document.getElementById("pNumber").value);
+                      var a = parseFloat(document.getElementById("pfumber").value);
+                      var b = parseFloat(document.getElementById("sfumber").value);
+
+                      var f = a + b;
+
+                      var h = x*i;
+
+                      var s = (h+f+p)/x;
+
+
+                     document.getElementById("sellingfinal").innerHTML = "$ "+s;
+                 }
+                 </script>
+
+                </div>
+            </div>
+        </div>
+        <div class="sep"></div>
+
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <p class="copyright text-muted">Created by <i id="tweet" class="fa fa-twitter" aria-hidden="true"></i>  @iambryansanders & <i class="fa fa-twitter" aria-hidden="true" id="tweet"></i> @cullenrpeterson</p>
+                        <h6 class="copyright text-muted">BTC: 1K6xgtgu9PPP8LJyGdwtSDzmBSuAVwKNDD</h6>
+          <h6 class="copyright text-muted">LTC: LcPGkxykg39358ErjHJzJuaLvXzXC7TPxD</h6>
+          <h6 class="copyright text-muted" >ETH: 0x0E2fF206E8294C9f20F90e6a8C74432FEA713a58</h6>
+                    </ul>
+                    <p class="copyright text-muted">Made with <i  id="red" class="fa fa-heart" aria-hidden="true"></i> by the Youth</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+
+
+  <!--
+
+  x = amount of coin bought
+    amountNumber
+  b = price bought at
+    bNumber
+  s = price sold at
+    sNumber
+
+  bf = buying fee
+    bfnumber
+  sf = selling fee
+    sfnumber
+
+  -->
+
+
+<script type="text/javascript">
+
+
+    function profitfunction() {
+
+          var z = 100;
+
+          var x = parseFloat(document.getElementById("amountNumber").value);
+
+          var b = parseFloat(document.getElementById("bNumber").value);
+          var s = parseFloat(document.getElementById("sNumber").value);
+
+          var a = parseFloat(document.getElementById("bfNumber").value);
+          var b = parseFloat(document.getElementById("sfNumber").value);
+
+
+          var i = x * y;
+          var f = a + b;
+
+          var u = i + f;
+
+          document.getElementById("demo").innerHTML = z;
+      }
+
+
+
+</script>
+
+
+</body>
+
+
+
+
+
+</html>
